@@ -11,36 +11,45 @@
         <div class="background-image">
         </div>
         <div class="icons">
-            <div class="My-computer">
+            <div class="My-computer" id="computer-icon">
                 <img src="images/mypc.png" alt="My Computer Icon">
                 <p>My Computer</p>
             </div>
-            <div class="Notepad">
+            <div class="Notepad" id="notepad-icon">
                 <img src="images/notes.png" alt="Notepad Icon">
                 <p>Notepad</p>
             </div>
-            <div class="paint">
+            <div class="paint" id="paint-icon">
                 <img src="images/paint.png" alt="Paint Icon">
                 <p>Paint</p>
             </div>
         </div>
         <div class="windows">
-            <div class="My-computer-window">
-                <div class="computer-header">GALLERY</div>
+            <div class="My-computer-window" id="computer-window">
+                <div class="computer-header">
+                    GALLERY
+                    <button class="close-button" id="close-computer">x</button>
+                </div>
                 <div class="computer-content">
                     <img class="image1" src="images/image1.png" alt="Image 1">
                     <img class="image2" src="images/image2.png" alt="Image 2">
                     <img class="image3" src="images/image3.png" alt="Image 3">
                 </div>
             </div>
-            <div class="Notepad-window">
-                <div class="notepad-header">NOTEPAD</div>
+            <div class="Notepad-window" id="notepad-window">
+                <div class="notepad-header">
+                    NOTEPAD
+                    <button class="close-button" id="close-notepad">x</button>
+                </div>
                 <div class="notepad-content">
                     <textarea placeholder="Type your notes here..."></textarea>
                 </div>
             </div>
-            <div class="paint-window">
-                <div class="paint-header">PAINT</div>
+            <div class="paint-window" id="paint-window">
+                <div class="paint-header">
+                    PAINT
+                    <button class="close-button" id="close-paint">x</button>
+                </div>
                 <div class="paint-content">
                     <canvas id="paint-canvas"></canvas>
                 </div>
@@ -59,7 +68,28 @@
             </div>
         </div>
     </div>
-    <script>
+
+
+<script>
+    document.getElementById("computer-icon").onclick = () => {
+        document.getElementById("computer-window").style.display = "block";
+    };
+    document.getElementById("notepad-icon").onclick = () => {
+        document.getElementById("notepad-window").style.display = "block";
+    };
+    document.getElementById("paint-icon").onclick = () => {
+        document.getElementById("paint-window").style.display = "block";
+    };
+    document.getElementById("close-computer").onclick = () => {
+        document.getElementById("computer-window").style.display = "none";
+    };
+    document.getElementById("close-notepad").onclick = () => {
+        document.getElementById("notepad-window").style.display = "none";
+    };
+    document.getElementById("close-paint").onclick = () => {
+        document.getElementById("paint-window").style.display = "none";
+    };
+
 const windows = document.querySelectorAll(
   ".My-computer-window, .Notepad-window, .paint-window"
 );
