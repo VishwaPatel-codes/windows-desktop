@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+}
+.desktop {
+    width: 100%;
+    height: 100vh;
+    background-image: url('images/wallpaper.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.icons {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+.My-computer,.Internet-Explorer,.Notepad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    cursor: pointer;
+}
+.My-computer img,.Notepad img,.Internet-Explorer img {
+    width: 88px;
+    height: 88px;
+    object-fit: contain;
+}
+.My-computer p,.Notepad p,.Internet-Explorer p {
+    font-size: 18px;
+    color: rgb(255, 243, 172);
+    text-align: center;
+    margin: 5px 0 0;
+}
