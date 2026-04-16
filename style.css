@@ -33,10 +33,16 @@ body {
     object-fit: contain;
 }
 .My-computer p,.paint p,.Notepad p {
-    font-size: 20px;
+    font-size: 18px;
     color: rgb(255, 255, 255,0.9);
     text-align: center;
     margin: 4px 0 0 0;
+        text-shadow:
+        -1px -1px 0 rgb(34, 34, 34),
+         1px -1px 0 rgb(34, 34, 34),
+        -1px  1px 0 rgb(34, 34, 34),
+         1px  1px 0 rgb(34, 34, 34);
+
 }
 .My-computer,
 .Notepad,
@@ -57,14 +63,12 @@ body {
 }
 .My-computer-window,.Notepad-window,.paint-window {
     width: 500px;
-    height: 300px;
+    height: 500px;
     position: absolute;
     background-color: #ffd4d4;
     border: 2px solid #8c8c8c;
     border-radius: 15px;
     overflow: hidden;
-    resize: both;
-    cursor: move;
 }
 .computer-header {
     background: #f7ff86;
@@ -177,4 +181,56 @@ body {
         linear-gradient(90deg, rgba(90, 130, 200, 0.12) 1px, transparent 1px);
     background-size: 4px 4px;
     z-index: 1000;
+}
+.icons {
+    position: relative;
+    z-index: 10;
+}
+
+.pixel-grid {
+    z-index: 2;
+}
+
+.windows {
+    position: relative;
+    z-index: 10;
+}
+.note-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+}
+.notepad-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+.notepad-content textarea {
+    width: 100%;
+    height: 150px;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 18px;
+    resize: none;
+    background-color: aliceblue;
+    font-family: pixelify sans, sans-serif;
+    box-sizing: border-box;
+}
+.add-note {
+    padding: 10px;
+    background: rgb(255, 115, 115);
+    border: 2px solid #ffdddd;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.note-title {
+    margin: 10px;
+    padding: 10px;
+    background: rgb(255, 236, 236);
+    border: 2px solid #ffdddd;
+    border-radius: 32px;
+    cursor: pointer;
+    font-family: pixelify sans, sans-serif;
 }

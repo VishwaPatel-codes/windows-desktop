@@ -45,9 +45,14 @@
                     NOTEPAD
                     <button class="close-button" id="close-notepad">x</button>
                 </div>
-                <div class="notepad-content">
-                    <textarea placeholder="Type your notes here..."></textarea>
+                <div class="note-form">
+                    <input class="note-title" type="text" placeholder="Title">
+                    <div class="notepad-content">
+                        <textarea placeholder="Type your notes here..."></textarea>
+                        <button class="add-note">Add note</button>
+                    </div>
                 </div>
+
             </div>
             <div class="paint-window" id="paint-window">
                 <div class="paint-header">
@@ -71,7 +76,7 @@
         </div>
     </div>
 
-
+//Javascript for opening and closing windows, updating clock, and dragging windows
 <script>
     document.getElementById("computer-icon").onclick = function() {
         document.getElementById("computer-window").style.display = "block";
