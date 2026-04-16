@@ -151,7 +151,8 @@ body {
 }
 .taskbar-clock {
     font-size: 18px;
-    color: white;
+    color: rgb(49, 49, 49);
+    padding: 10px 20px;
 }
 
 .My-computer-window,.Notepad-window,.paint-window {

@@ -61,39 +61,56 @@
             </div>
             <div class="taskbar-openedapps">
             </div>
-            <div class="taskbar-clock">
-                <p id="clock">
-                    12:00 PM
-                </p>
+            <div id="clock" class="taskbar-clock">
+                    00:00:00
             </div>
         </div>
     </div>
 
 
 <script>
-    document.getElementById("computer-icon").onclick = () => {
+    document.getElementById("computer-icon").onclick = function() {
         document.getElementById("computer-window").style.display = "block";
     };
-    document.getElementById("notepad-icon").onclick = () => {
+    document.getElementById("notepad-icon").onclick = function() {
         document.getElementById("notepad-window").style.display = "block";
     };
-    document.getElementById("paint-icon").onclick = () => {
+    document.getElementById("paint-icon").onclick = function() {
         document.getElementById("paint-window").style.display = "block";
     };
-    document.getElementById("close-computer").onclick = () => {
+    document.getElementById("close-computer").onclick = function() {
         document.getElementById("computer-window").style.display = "none";
     };
-    document.getElementById("close-notepad").onclick = () => {
+    document.getElementById("close-notepad").onclick = function() {
         document.getElementById("notepad-window").style.display = "none";
     };
-    document.getElementById("close-paint").onclick = () => {
+    document.getElementById("close-paint").onclick = function() {
         document.getElementById("paint-window").style.display = "none";
     };
+    function updateClock() {
+        const now = new Date();
+
+        let hours = now.getHours();
+        let minutes = now.getMinutes();
+
+        const ampm = hours >= 12 ? "PM" : "AM";
+
+        hours = hours % 12;
+        if (hours === 0) hours = 12;
+
+        minutes = minutes.toString().padStart(2, "0");
+
+        document.getElementById("clock").textContent =
+            `${hours}:${minutes} ${ampm}`;
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+
 
 const windows = document.querySelectorAll(
   ".My-computer-window, .Notepad-window, .paint-window"
 );
-
 windows.forEach(windowEl => {
   let isDragging = false;
   let offsetX = 0;
