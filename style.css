@@ -322,3 +322,77 @@ body {
     text-align:center;
     align-items: flex-start;
 }
+.cats,.pics,.drawings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.cats-content {
+    display: none;
+    gap: 20px;
+    padding: 20px;
+}
+
+.cat-file {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cat-file p {
+    margin-top: 0px;
+    font-size: 13px;
+}
+.cat-image {
+    width: 100px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.cat-popup {
+    display: none;
+    position: absolute;
+    top: 140px;
+    left: 110px;
+    width: 250px;
+    background: #ffad98;
+    border: 2px solid #666;
+    border-radius: 17px;
+    padding: 17px;
+    text-align: center;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0,0.3);
+}
+
+.cat-popup p {
+    margin: 0 0 12px;
+    font-size: 15px;
+    color: #333;
+}
+
+.cat-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.cat-popup button {
+    width: 80px;
+    padding: 7px 0;
+    border: 1px solid #222;
+    border-radius: 10px;
+    background: #fff7b8;
+    cursor: pointer;
+    font-family: "Pixelify Sans", sans-serif;
+}
+#back-from-cats {
+    position: absolute;
+    top: 62px;
+    left: 20px;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 10px;
+    background: #fff7b8;
+    font-family: "Pixelify Sans", sans-serif;
+    cursor: pointer;
+}
