@@ -60,16 +60,21 @@
                     <button class="close-button" id="close-paint">x</button>
                 </div>
                 <div class="paint-content">
-                    <div class="paint-sidebar">    
+                    <div class="paint-sidebar">
+                        <p class="paint-title">Colors</p>    
                         <div class="colors">
-                            <button class="color" id="black-color" style="background-color: rgb(24, 24, 24);"></button>
-                            <button class="color" id="red-color" style="background-color: rgb(255, 92, 92);"></button>
-                            <button class="color" id="green-color" style="background-color: rgb(47, 193, 90);"></button>
-                            <button class="color" id="blue-color" style="background-color: rgb(29, 78, 216);"></button>
-                            <button class="color" id="black-color" style="background-color: rgb(242, 255, 130);"></button>
-                            <button class="color" id="red-color" style="background-color: rgb(249, 78, 255);"></button>
-                            <button class="color" id="green-color" style="background-color: rgb(255, 78, 152);"></button>
-                            <button class="color" id="blue-color" style="background-color: rgb(126, 126, 126);"></button>
+                            <button class="color" id="red-color" style="background-color: rgb(255, 110, 110);"></button>
+                            <button class="color" id="black-color" style="background-color: rgb(34, 34, 34);"></button>
+                            <button class="color" id="yellow-color" style="background-color: rgb(252, 255, 98);"></button>
+                            <button class="color" id="white-color" style="background-color: rgb(249, 250, 255);"></button>
+                            <button class="color" id="green-color" style="background-color: rgb(148, 253, 116);"></button>
+                            <button class="color" id="blue-color" style="background-color: rgb(90, 78, 255);"></button>
+                            <button class="color" id="pink-color" style="background-color: rgb(255, 78, 152);"></button>
+                            <button class="color" id="purple-color" style="background-color: rgb(251, 123, 255);"></button>
+                            <button class="color" id="brown-color" style="background-color: rgb(223, 145, 81);"></button>
+                            <button class="color" id="orange-color" style="background-color: rgb(255, 188, 87);"></button>
+                            <button class="color" id="darkpink-color" style="background-color: rgb(255, 51, 211);"></button>
+                            <button class="color" id="cyan-color" style="background-color: rgb(83, 235, 255);"></button>
                         </div>
                     </div>
                     <div class="paint-center">
@@ -183,7 +188,106 @@ windows.forEach(windowEl => {
     isDragging = false;
   });
 });
+const canvas = document.getElementById("paint-canvas");
+const ctx = canvas.getContext("2d");
 
+canvas.width = 350;
+canvas.height = 350;
+
+let draw = false;
+let color = "#ff5c5c";
+let tool = "brush";
+
+document.querySelectorAll(".color")[0].onclick = function () {
+    color = "#ff5c5c";
+};
+
+document.querySelectorAll(".color")[1].onclick = function () {
+    color = "#222222";
+};
+
+document.querySelectorAll(".color")[2].onclick = function () {
+    color = "#fcff62";
+};
+
+document.querySelectorAll(".color")[3].onclick = function () {
+    color = "#ffffff";
+};
+
+document.querySelectorAll(".color")[4].onclick = function () {
+    color = "#94fd74";
+};
+
+document.querySelectorAll(".color")[5].onclick = function () {
+    color = "#5a4eff";
+};
+
+document.querySelectorAll(".color")[6].onclick = function () {
+    color = "#ff4e98";
+};
+
+document.querySelectorAll(".color")[7].onclick = function () {
+    color = "#fb7bff";
+};
+
+document.querySelectorAll(".color")[8].onclick = function () {
+    color = "#df9151";
+};
+
+document.querySelectorAll(".color")[9].onclick = function () {
+    color = "#ffbc57";
+};
+
+document.querySelectorAll(".color")[10].onclick = function () {
+    color = "#ff33d3";
+};
+
+document.querySelectorAll(".color")[11].onclick = function () {
+    color = "#53ebff";
+};
+
+document.getElementById("brush-tool").onclick = function () {
+    tool = "brush";
+};
+
+document.getElementById("eraser-tool").onclick = function () {
+    tool = "eraser";
+};
+
+document.getElementById("clear-canvas").onclick = function () {
+    ctx.clearRect(0, 0, 350, 350);
+};
+
+canvas.onmousedown = function () {
+    draw = true;
+};
+
+canvas.onmouseup = function () {
+    draw = false;
+};
+
+canvas.onmouseleave = function () {
+    draw = false;
+};
+
+canvas.onmousemove = function (e) {
+    if (!draw) return;
+
+    let x = e.offsetX;
+    let y = e.offsetY;
+
+    x = Math.floor(x / 10) * 10;
+    y = Math.floor(y / 10) * 10;
+
+    if (tool == "brush") {
+        ctx.fillStyle = color;
+        ctx.fillRect(x, y, 10, 10);
+    }
+
+    if (tool == "eraser") {
+        ctx.clearRect(x, y, 10, 10);
+    }
+};
 </script>
 </body>
 </html>

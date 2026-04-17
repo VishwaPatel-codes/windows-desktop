@@ -71,8 +71,8 @@ body {
     overflow: hidden;
 }
 .paint-window {
-    width: 600px;
-    height: 480px;
+    width: 550px;
+    height: 500px;
     position: absolute;
     background-color: #ffd4d4;
     border: 2px solid #8c8c8c;
@@ -238,13 +238,14 @@ body {
     padding: 20px;
     gap: 20px;
     box-sizing: border-box;
+    align-items: flex-start;
 }
 .paint-sidebar {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 7px;
     align-items: flex-end;
-    width: 70px;
+    width: 50px;
 }
 .paint-sidebar p,.tool-box p{
     margin:0;
@@ -255,14 +256,14 @@ body {
     cursor: pointer;
     display:flex;
     flex-direction:column;
-    gap:10px;
+    gap:5px;
     flex-wrap:wrap;
 }
 .color {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     border-radius: 40%;
-    border: 2px solid #8c8c8c;
+    border: 0.5px solid #000000;
 }
 .paint-center{
     display:flex;
@@ -288,8 +289,7 @@ body {
 .paint-tools {
     display: flex;
     flex-direction:column;
-    gap: 12px;
-    align-content: flex-start;
+    align-items: center;
 }
 .tool {
     width: 45px;
@@ -307,15 +307,23 @@ body {
 }
 .tool:hover {
     background-color: #f0f0f0;
+    cursor: pointer;
+}
+.color:hover {
+    opacity: 0.8;
+    cursor: pointer;
 }
 .tool-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    gap: 3px;
+    margin: 5px;
+
 }
-.tools-title{
+.tools-title,.paint-title {
     font-size:15px;
     color:#444;
     text-align:center;
+    align-items: flex-start;
 }
