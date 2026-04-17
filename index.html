@@ -60,7 +60,42 @@
                     <button class="close-button" id="close-paint">x</button>
                 </div>
                 <div class="paint-content">
-                    <canvas id="paint-canvas"></canvas>
+                    <div class="paint-sidebar">    
+                        <div class="colors">
+                            <button class="color" id="black-color" style="background-color: rgb(24, 24, 24);"></button>
+                            <button class="color" id="red-color" style="background-color: rgb(255, 92, 92);"></button>
+                            <button class="color" id="green-color" style="background-color: rgb(47, 193, 90);"></button>
+                            <button class="color" id="blue-color" style="background-color: rgb(29, 78, 216);"></button>
+                            <button class="color" id="black-color" style="background-color: rgb(242, 255, 130);"></button>
+                            <button class="color" id="red-color" style="background-color: rgb(249, 78, 255);"></button>
+                            <button class="color" id="green-color" style="background-color: rgb(255, 78, 152);"></button>
+                            <button class="color" id="blue-color" style="background-color: rgb(126, 126, 126);"></button>
+                        </div>
+                    </div>
+                    <div class="paint-center">
+                        <canvas id="paint-canvas"></canvas>
+                    </div>
+                    <div class="paint-tools">
+                        <p class="tools-title">Tools</p>
+                        <div class="tool-box">
+                            <button class="tool" id="brush-tool">
+                                🎨
+                            </button>
+                        <p>Brush</p>
+                        </div>
+                        <div class="tool-box">
+                            <button class="tool" id="eraser-tool">
+                                🧽
+                            </button>
+                            <p>Eraser</p>
+                        </div>
+                        <div class="tool-box">
+                            <button class="tool" id="clear-canvas">
+                                🗑️
+                            </button>
+                            <p>Clear</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -76,7 +111,6 @@
         </div>
     </div>
 
-//Javascript for opening and closing windows, updating clock, and dragging windows
 <script>
     document.getElementById("computer-icon").onclick = function() {
         document.getElementById("computer-window").style.display = "block";
@@ -126,6 +160,13 @@ windows.forEach(windowEl => {
   let offsetY = 0;
 
   windowEl.addEventListener("mousedown", e => {
+    if (windowEl.id === "paint-window") {
+        const insideCanvas = e.target.closest("#paint-canvas");
+
+        if (insideCanvas) {
+            return;
+        }
+    }
     isDragging = true;
     offsetX = e.clientX - windowEl.offsetLeft;
     offsetY = e.clientY - windowEl.offsetTop;
@@ -142,6 +183,7 @@ windows.forEach(windowEl => {
     isDragging = false;
   });
 });
+
 </script>
 </body>
 </html>
