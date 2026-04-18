@@ -360,3 +360,37 @@ document.getElementById("cmd-input").addEventListener("keydown", function (e) {
 
     this.value = "";
 });
+let startButton = document.querySelector(".start-button");
+let startMenu = document.getElementById("start-menu");
+
+startButton.onclick = function () {
+    if (startMenu.style.display === "block") {
+        startMenu.style.display = "none";
+    } else {
+        startMenu.style.display = "block";
+    }
+};
+
+document.getElementById("start-about").onclick = function () {
+    document.getElementById("about-window").style.display = "block";
+    startMenu.style.display = "none";
+};
+
+document.getElementById("start-notepad").onclick = function () {
+    document.getElementById("notepad-window").style.display = "block";
+    startMenu.style.display = "none";
+};
+
+document.getElementById("start-paint").onclick = function () {
+    document.getElementById("paint-window").style.display = "block";
+    startMenu.style.display = "none";
+};
+
+document.getElementById("start-cmd").onclick = function () {
+    document.getElementById("cmd-window").style.display = "block";
+    startMenu.style.display = "none";
+};
+
+document.getElementById("close-popup").onclick = function () {
+    document.getElementById("system-popup").style.display = "none";
+};

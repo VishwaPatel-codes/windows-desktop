@@ -206,23 +206,54 @@
             </div>
         </div>
         <div class="cmd-window" id="cmd-window">
-        <div class="cmd-header">
-            cmd.exe
-            <button class="close-button" id="close-cmd">x</button>
-        </div>
-
-        <div class="cmd-content">
-            <div id="cmd-output">
-                <p>VishwaOS Command Prompt</p>
-                <p>type "help"</p>
+            <div class="cmd-header">
+                cmd.exe
+                <button class="close-button" id="close-cmd">x</button>
             </div>
 
-            <div class="cmd-input-line">
-                <span>C:\Users\Vishwa></span>
-                <input type="text" id="cmd-input">
+            <div class="cmd-content">
+                <div id="cmd-output">
+                    <p>IDKos Command Prompt</p>
+                    <p>type "help"</p>
+                </div>
+
+                <div class="cmd-input-line">
+                    <span>C:\Users\Vishwa></span>
+                    <input type="text" id="cmd-input">
+                </div>
             </div>
         </div>
-    </div>
+        <div class="start-menu" id="start-menu">
+            <div class="start-menu-item" id="start-about">
+                <img src="images/pfp.png">
+                <p>About me</p>
+            </div>
+            <div class="start-menu-item" id="start-notepad">
+                <img src="images/notes.png">
+                <p>Notepad</p>
+            </div>
+            <div class="start-menu-item" id="start-paint">
+                <img src="images/paint.png">
+                <p>Paint</p>
+            </div>
+            <div class="start-menu-item" id="start-cmd">
+                <img src="images/cmd.png">
+                <p>CMD</p>
+            </div>
+        </div>
+        <div class="system-popup" id="system-popup">
+            <div class="system-popup-header">
+                <span>start</span>
+                <button id="close-popup">x</button>
+            </div>
+            <div class="system-popup-content">
+                <img src="images/cat3.gif" alt="cat gif">
+
+                <p>hii !! welcome to my silly little desktop</p>
+                <p>double click the icons to open things</p>
+                <p>there are hidden commands in cmd.exe too :></p>
+            </div>
+        </div>
         <div class="taskbar">
             <div >
                 <button class="start-button">Start</button>
