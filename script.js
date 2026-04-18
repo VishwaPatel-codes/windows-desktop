@@ -38,7 +38,7 @@ document.getElementById("computer-icon").onclick = function() {
 
 
 const windows = document.querySelectorAll(
-  ".My-computer-window, .Notepad-window, .paint-window, .about-window"
+  ".My-computer-window, .Notepad-window, .paint-window, .about-window,.cmd-window"
 );
 windows.forEach(windowEl => {
   let isDragging = false;
@@ -178,7 +178,6 @@ document.getElementById("yes-button").onclick = function () {
 
     document.querySelector(".about-me").style.display = "none";
     document.getElementById("cats-folder").style.display = "none";
-    document.querySelector(".drawings").style.display = "none";
 
     document.getElementById("cats-content").style.display = "flex";
 };
@@ -191,7 +190,6 @@ document.getElementById("back-from-cats").onclick = function () {
 
     document.querySelector(".about-me").style.display = "block";
     document.getElementById("cats-folder").style.display = "flex";
-    document.querySelector(".drawings").style.display = "block";
 };
 document.getElementById("about-folder").onclick = function () {
     document.getElementById("about-window").style.display = "block";
@@ -221,3 +219,144 @@ likesTab.onclick = function () {
     aboutTab.classList.remove("active-tab");
     likesTab.classList.add("active-tab");
 };
+document.getElementById("cmd-icon").onclick = function () {
+    document.getElementById("cmd-window").style.display = "block";
+};
+
+document.getElementById("close-cmd").onclick = function () {
+    document.getElementById("cmd-window").style.display = "none";
+};
+
+document.getElementById("cmd-input").addEventListener("keydown", function (e) {
+
+    if (e.key !== "Enter") {
+        return;
+    }
+
+    let input = this.value.toLowerCase().trim();
+    let output = document.getElementById("cmd-output");
+
+    output.innerHTML += "<p>C:\\Users\\Vishwa> " + input + "</p>";
+
+    if (input === "help") {
+        output.innerHTML += "<p>commands: help, whoami, about, cats, music, mood, secret, clear, date, tea, sleep, portfolio, jungkook, army, blink, cry, hi, bye, favcolor, food, dream, website, code, homework, tired, random</p>";
+    }
+
+    else if (input === "whoami") {
+        output.innerHTML += "<p>just a girl trying to make a website look cool</p>";
+    }
+
+    else if (input === "about") {
+        output.innerHTML += "<p>vishwa, likes pink, cats, kpop and making unnecessary things in html</p>";
+    }
+
+    else if (input === "cats") {
+        output.innerHTML += "<p>warning: there are too many cat pictures in this computer</p>";
+    }
+
+    else if (input === "music") {
+        output.innerHTML += "<p>currently playing: probably some kpop or sad playlist at 2am</p>";
+    }
+
+    else if (input === "mood") {
+        output.innerHTML += "<p>probably tired but pretending everything is under control</p>";
+    }
+
+    else if (input === "tea") {
+        output.innerHTML += "<p>approved. tea makes everything slightly less terrible.</p>";
+    }
+
+    else if (input === "sleep") {
+        output.innerHTML += "<p>sleep.exe has stopped working</p>";
+    }
+
+    else if (input === "portfolio") {
+        output.innerHTML += "<p>this project is not going in the portfolio and we both know it</p>";
+    }
+
+    else if (input === "date") {
+        output.innerHTML += "<p>today feels fake but okay</p>";
+    }
+
+    else if (input === "secret") {
+        output.innerHTML += "<p>congrats you found the hidden command</p>";
+        output.innerHTML += "<p>૮ ˶ᵔ ᵕ ᵔ˶ ა</p>";
+    }
+
+    else if (input === "jungkook") {
+        output.innerHTML += "<p>valid answer honestly</p>";
+    }
+
+    else if (input === "army") {
+        output.innerHTML += "<p>bts will never know but the dedication is real</p>";
+    }
+
+    else if (input === "blink") {
+        output.innerHTML += "<p>blackpink in your area</p>";
+    }
+
+    else if (input === "cry") {
+        output.innerHTML += "<p>already doing that internally</p>";
+    }
+
+    else if (input === "hi") {
+        output.innerHTML += "<p>hello mysterious computer user</p>";
+    }
+
+    else if (input === "bye") {
+        output.innerHTML += "<p>you can leave but the bugs will stay</p>";
+    }
+
+    else if (input === "favcolor") {
+        output.innerHTML += "<p>pink + purple. obviously.</p>";
+    }
+
+    else if (input === "food") {
+        output.innerHTML += "<p>probably surviving on tea and random snacks</p>";
+    }
+
+    else if (input === "dream") {
+        output.innerHTML += "<p>to make something cool without wanting to delete it after 5 minutes</p>";
+    }
+
+    else if (input === "website") {
+        output.innerHTML += "<p>this website took emotional damage to make</p>";
+    }
+
+    else if (input === "code") {
+        output.innerHTML += "<p>99% confusion, 1% accidentally works</p>";
+    }
+
+    else if (input === "homework") {
+        output.innerHTML += "<p>homework.exe was permanently deleted</p>";
+    }
+
+    else if (input === "tired") {
+        output.innerHTML += "<p>same</p>";
+    }
+
+    else if (input === "random") {
+        let randomReplies = [
+            "maybe listening to music right now",
+            "cats are better than most people",
+            "this command line knows too much",
+            "there is definitely no bug hiding somewhere",
+            "why does everything break after changing one thing",
+            "you should probably sleep",
+            "or maybe make another useless website"
+        ];
+
+        let randomText = randomReplies[Math.floor(Math.random() * randomReplies.length)];
+        output.innerHTML += "<p>" + randomText + "</p>";
+    }
+
+    else if (input === "clear") {
+        output.innerHTML = "";
+    }
+
+    else {
+        output.innerHTML += "<p>'" + input + "' is not recognized as a command</p>";
+    }
+
+    this.value = "";
+});

@@ -20,19 +20,23 @@ body {
     gap: 18px;
     padding: 20px 0 0 20px;
 }
-.My-computer,.paint,.Notepad {
+.My-computer,.paint,.Notepad,.cmd {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 130px;
     cursor: pointer;
 }
-.My-computer img,.paint img,.Notepad img {
+.My-computer img,.paint img,.Notepad img{
     width: 85px;
     height: 85px;
     object-fit: contain;
 }
-.My-computer p,.paint p,.Notepad p {
+.cmd img {
+    width: 99px;
+    height: 99px;
+}
+.My-computer p,.paint p,.Notepad p,.cmd p{
     font-size: 18px;
     color: rgb(255, 255, 255,0.9);
     text-align: center;
@@ -46,13 +50,13 @@ body {
 }
 .My-computer,
 .Notepad,
-.paint {
+.paint,.cmd {
     transition: transform 0.15s ease-out;
 }
 
 .My-computer:hover,
 .Notepad:hover,
-.paint:hover {
+.paint:hover,.cmd:hover {
     transform: translateY(-4px) rotate(-1deg);
 }
 .windows {
@@ -346,7 +350,7 @@ body {
     text-align:center;
     align-items: flex-start;
 }
-.cats,.about-me,.drawings {
+.cats,.about-me {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -546,7 +550,7 @@ body {
     color: #6d5b74;
 }
 .random-pic-box {
-    width: 150px;
+    width: 250px;
     margin-left: auto;
 }
 .random-pic-box img {
@@ -636,4 +640,67 @@ body {
     border: 1px solid black;
     border-radius: 14px;
     padding: 12px;
+}
+.cmd-window {
+    width: 500px;
+    height: 300px;
+    position: absolute;
+    background: #ffd4d4;
+    border: 2px solid #8c8c8c;
+    overflow: hidden;
+    padding-top: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    display: none;
+    z-index: 20;
+    box-shadow: 6px 6px 0 rgba(0,0,0,0.2);
+}
+
+.cmd-header {
+    background: #444;
+    color: #78ff5e;
+    padding: 5px 16px;
+    overflow: visible;
+    box-sizing: border-box;
+    min-height: 35px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #8c8c8c;
+    font-size: 20px;
+    letter-spacing: 5px;
+}
+
+.cmd-content {
+    background: #111;
+    color: #b6ffb3;
+    height: calc(100% - 35px);
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 18px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#cmd-output p {
+    margin: 0 0 8px 0;
+}
+
+.cmd-input-line {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#cmd-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #b6ffb3;
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 18px;
+    flex: 1;
+    pointer-events: auto;
 }
