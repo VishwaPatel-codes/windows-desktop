@@ -38,7 +38,7 @@ document.getElementById("computer-icon").onclick = function() {
 
 
 const windows = document.querySelectorAll(
-  ".My-computer-window, .Notepad-window, .paint-window"
+  ".My-computer-window, .Notepad-window, .paint-window, .about-window"
 );
 windows.forEach(windowEl => {
   let isDragging = false;
@@ -176,7 +176,7 @@ document.getElementById("cats-folder").onclick = function () {
 document.getElementById("yes-button").onclick = function () {
     document.getElementById("cat-popup").style.display = "none";
 
-    document.querySelector(".pics").style.display = "none";
+    document.querySelector(".about-me").style.display = "none";
     document.getElementById("cats-folder").style.display = "none";
     document.querySelector(".drawings").style.display = "none";
 
@@ -189,7 +189,35 @@ document.getElementById("yes2-button").onclick = function () {
 document.getElementById("back-from-cats").onclick = function () {
     document.getElementById("cats-content").style.display = "none";
 
-    document.querySelector(".pics").style.display = "block";
+    document.querySelector(".about-me").style.display = "block";
     document.getElementById("cats-folder").style.display = "flex";
     document.querySelector(".drawings").style.display = "block";
+};
+document.getElementById("about-folder").onclick = function () {
+    document.getElementById("about-window").style.display = "block";
+};
+
+document.getElementById("close-about").onclick = function () {
+    document.getElementById("about-window").style.display = "none";
+};
+let aboutTab = document.getElementById("about-tab");
+let likesTab = document.getElementById("likes-tab");
+
+let aboutPage = document.getElementById("about-page");
+let likesPage = document.getElementById("likes-page");
+
+aboutTab.onclick = function () {
+    aboutPage.style.display = "flex";
+    likesPage.style.display = "none";
+
+    aboutTab.classList.add("active-tab");
+    likesTab.classList.remove("active-tab");
+};
+
+likesTab.onclick = function () {
+    aboutPage.style.display = "none";
+    likesPage.style.display = "flex";
+
+    aboutTab.classList.remove("active-tab");
+    likesTab.classList.add("active-tab");
 };
