@@ -2,7 +2,7 @@
 
 A cute fake desktop website inspired by old Windows and pixel-style games.
 
-Live Demo: https://vishwapatel-codes.github.io/windows-desktop/
+Live Demo: https://vishwa-io.github.io/windows-desktop/
 
 Features:
 - Draggable desktop windows
